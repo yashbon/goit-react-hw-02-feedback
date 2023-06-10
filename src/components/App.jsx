@@ -1,7 +1,8 @@
 import { Component } from 'react';
-// import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
-// import Statistics from './Statistics/Statistics';
+import Statistics from './Statistics/Statistics';
+import Notification from './Notification/Notification';
 
 export class App extends Component {
     state = {
@@ -36,8 +37,6 @@ export class App extends Component {
         const data = Object.values(this.state);
         // console.log(data);
         const options = Object.keys(this.state);
-        // console.log(options);
-        // console.log(good, neutral, bad);
         return (
             <div
                 style={{
@@ -57,12 +56,35 @@ export class App extends Component {
                     // neutral={neutral}
                     // bad={bad}
                     // state={this.state}
-                    data={data}
-                    options={options}
-                    onLeaveFeedback={this.handleClick}
-                    totalFeedback={this.countTotalFeedback}
-                    positiveFeedback={this.countPositiveFeedbackPercentage}
-                />
+
+                    // data={data}
+
+                    // options={options}
+                    // onLeaveFeedback={this.handleClick}
+
+                    // totalFeedback={this.countTotalFeedback}
+                    // positiveFeedback={this.countPositiveFeedbackPercentage}
+                >
+                    <FeedbackOptions
+                        options={options}
+                        onLeaveFeedback={this.handleClick}
+                        // totalFeedback={this.countTotalFeedback}
+                    />
+                </Section>
+                <Section title="Statistics">
+                    {!this.countTotalFeedback() > 0 ? (
+                        <Notification message="There is no feedback" />
+                    ) : (
+                        <Statistics
+                            data={data}
+                            options={options}
+                            totalFeedback={this.countTotalFeedback}
+                            positivePercentage={
+                                this.countPositiveFeedbackPercentage
+                            }
+                        />
+                    )}
+                </Section>
                 {/* <div>
                     <p>Please leave feedback</p>
                     <FeedbackOptions

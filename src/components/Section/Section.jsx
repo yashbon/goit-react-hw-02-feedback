@@ -1,6 +1,7 @@
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Notification from 'components/Notification/Notification';
 import Statistics from 'components/Statistics/Statistics';
+// import { Children } from 'react';
 
 const Section = props => {
     // console.log([props]);
@@ -11,18 +12,19 @@ const Section = props => {
         // bad,
         data,
         options,
-        onLeaveFeedback,
+        // onLeaveFeedback,
         totalFeedback,
         positiveFeedback,
     } = props;
     return (
-        <>
+        <section>
             <h2>{title}</h2>
-            <FeedbackOptions
+            {props.children}
+            {/* <FeedbackOptions
                 options={options}
                 onLeaveFeedback={onLeaveFeedback}
-            />
-            {!totalFeedback() > 0 ? (
+            /> */}
+            {/* {!totalFeedback() > 0 ? (
                 <Notification message="There is no feedback" />
             ) : (
                 <Statistics
@@ -35,8 +37,8 @@ const Section = props => {
                     totalFeedback={totalFeedback}
                     positivePercentage={positiveFeedback}
                 />
-            )}
-        </>
+            )} */}
+        </section>
     );
 };
 
