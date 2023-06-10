@@ -20,7 +20,6 @@ const Statistics = props => {
                 {options[2]}: {bad}
             </p> */}
             <p>Total: {totalFeedback()}</p>
-            {/* {console.log(totalFeedback())}   */}
             {totalFeedback() > 0 && (
                 <p>Good feedback: {positivePercentage()}%</p>
             )}
