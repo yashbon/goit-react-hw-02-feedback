@@ -1,6 +1,6 @@
-import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
-import Notification from 'components/Notification/Notification';
-import Statistics from 'components/Statistics/Statistics';
+// import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
+// import Notification from 'components/Notification/Notification';
+// import Statistics from 'components/Statistics/Statistics';
 // import { Children } from 'react';
 
 const Section = props => {
@@ -10,11 +10,11 @@ const Section = props => {
         // good,
         // neutral,
         // bad,
-        data,
-        options,
+        // data,
+        // options,
         // onLeaveFeedback,
-        totalFeedback,
-        positiveFeedback,
+        // totalFeedback,
+        // positiveFeedback,
     } = props;
     return (
         <section>
