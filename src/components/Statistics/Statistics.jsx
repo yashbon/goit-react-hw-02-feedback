@@ -1,11 +1,12 @@
+import css from './Statistics.module.css';
 const Statistics = props => {
     // console.log(props);
     const { data, options, totalFeedback, positivePercentage } = props;
     return (
-        <div>
-            <ul>
+        <>
+            <ul className={css.statsList}>
                 {options.map((option, idx) => (
-                    <li key={option}>
+                    <li className={css.statsListItem} key={option}>
                         {option}: {data[idx]}
                     </li>
                 ))}
@@ -23,7 +24,7 @@ const Statistics = props => {
             {totalFeedback() > 0 && (
                 <p>Good feedback: {positivePercentage()}%</p>
             )}
-        </div>
+        </>
     );
 };
 export default Statistics;

@@ -1,3 +1,4 @@
+import css from './Section.module.css';
 // import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 // import Notification from 'components/Notification/Notification';
 // import Statistics from 'components/Statistics/Statistics';
@@ -18,7 +19,7 @@ const Section = props => {
     } = props;
     return (
         <section>
-            <h2>{title}</h2>
+            <h2 className={css.title}>{title}</h2>
             {props.children}
             {/* <FeedbackOptions
                 options={options}

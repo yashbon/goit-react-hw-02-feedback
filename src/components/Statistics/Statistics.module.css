@@ -1,0 +1,9 @@
+.statsList {
+    padding: 0;
+}
+
+.statsListItem {}
+
+.statsListItem::first-letter {
+    text-transform: uppercase;
+}
