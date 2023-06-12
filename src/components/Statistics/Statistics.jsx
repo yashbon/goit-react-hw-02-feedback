@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 const Statistics = props => {
-    // console.log(props);
     const { data, options, totalFeedback, positivePercentage } = props;
     return (
         <>
@@ -20,11 +20,21 @@ const Statistics = props => {
             <p>
                 {options[2]}: {bad}
             </p> */}
-            <p>Total: {totalFeedback()}</p>
+            <p className={css.total}>Total: {totalFeedback()}</p>
             {totalFeedback() > 0 && (
-                <p>Good feedback: {positivePercentage()}%</p>
+                <p className={css.good}>
+                    Good feedback: {positivePercentage()}%
+                </p>
             )}
         </>
     );
 };
+
 export default Statistics;
+
+Statistics.propTypes = {
+    data: PropTypes.array.isRequired,
+    options: PropTypes.array.isRequired,
+    totalFeedback: PropTypes.func.isRequired,
+    positivePercentage: PropTypes.func.isRequired,
+};

@@ -1,11 +1,7 @@
+import PropTypes from 'prop-types';
 import css from './Section.module.css';
-// import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
-// import Notification from 'components/Notification/Notification';
-// import Statistics from 'components/Statistics/Statistics';
-// import { Children } from 'react';
 
 const Section = props => {
-    // console.log([props]);
     const {
         title,
         // good,
@@ -44,3 +40,6 @@ const Section = props => {
 };
 
 export default Section;
+Section.propTypes = {
+    title: PropTypes.string.isRequired,
+};
